@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,32 +7,35 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Suigin!</title>
+    <title>Suigin!!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/custom.css") %>">
+
+    <%= render "shim.html" %>
   </head>
 
   <body>
+    <%= render "header.html", conn: @conn %>
+
+    <div class="universal">
+      <div class="container">
+        <h2>
+          <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+          <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+        </h2>
+
+        <main role="main">
+          <%= render @view_module, @view_template, assigns %>
+        </main>
+      </div> <!-- /container -->
+    </div> <!-- /universal -->
+
     <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-          <%= render "header.html", conn: @conn %>
-        </nav>
-        <span class="logo"></span>
-      </header>
-
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
-
       <%= render "footer.html", conn: @conn %>
+    </div>
 
-    </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/bootstrap.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/jquery-2.2.2.min.js") %>"></script>
   </body>
 </html>
