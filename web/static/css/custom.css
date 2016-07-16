@@ -1,0 +1,98 @@
+@import "bootstrap.css";
+
+/* universal */
+@media (min-width: 768px) {
+  .container {
+    max-width: 800px;
+  }
+
+  .navbar-nav {
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float: none;
+  }
+
+  .navbar-default {
+    background-color: #66b6d5;
+    border-color: #fff;
+  }
+
+  /* navbar テキストカラー */
+  .navbar-default .navbar-nav > li > a {
+    color: #fff;
+  }
+}
+
+main {
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.clearfix:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.universal {
+  background-color: #66b6d5;
+}
+
+/* header */
+header {
+  margin-top: 5px;
+  margin-bottom: 50px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+/* footer */
+footer {
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+footer a {
+  color: #000;
+  text-decoration: none;
+  /* border-bottom: 1px solid; */
+}
+
+footer a:hover {
+  color: #89c7de;
+}
+
+/* logo */
+.logo_text {
+  font-family: 'Vidaloka', serif;
+  text-align: center;
+  font-weight: normal;
+  color: #89c7de;
+}
+
+.main_logo {
+  display: block;
+  font-size: 72px;
+  line-height: 72px;
+  letter-spacing: -4px;
+  text-shadow: 1px 1px 3px #fff, 3px 3px 6px #888;
+}
+
+.logo_description {
+  display: block;
+  font-size: 24px;
+  line-height: 10px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 5px #fff, 5px 5px 10px #888;
+}
