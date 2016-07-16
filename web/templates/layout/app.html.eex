@@ -18,6 +18,7 @@
           <ul class="nav nav-pills pull-right">
             <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
           </ul>
+          <%= render "header.html", conn: @conn %>
         </nav>
         <span class="logo"></span>
       </header>
@@ -28,6 +29,8 @@
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
+
+      <%= render "footer.html", conn: @conn %>
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
