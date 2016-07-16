@@ -13,8 +13,11 @@ defmodule Suigin.TaskController do
     category = Suigin.Category |> Repo.all()
     category_list = Enum.reduce(category, [], fn(d, acc) -> acc ++ ["#{d.name}": d.id] end)
 
+    status = Suigin.Status |> Repo.all()
+    status_list = Enum.reduce(status, [], fn(d, acc) -> acc ++ ["#{d.name}": d.id] end)
+
     changeset = Task.changeset(%Task{})
-    render(conn, "new.html", category_list: category_list, changeset: changeset)
+    render(conn, "new.html", category_list: category_list, status_list: status_list, changeset: changeset)
   end
 
   def create(conn, %{"task" => task_params}) do
