@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= label f, :status, class: "control-label" %>
-    <%= number_input f, :status, class: "form-control" %>
+    <%= select f, :status, 1..4, class: "form-control" %>
     <%= error_tag f, :status %>
   </div>
 
@@ -27,3 +27,5 @@
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<%= @category_list %>

@@ -4,6 +4,8 @@ defmodule Suigin.Category do
   schema "category" do
     field :name, :string
 
+    belongs_to :tasks, Task, foreign_key: :task_id
+
     timestamps()
   end
 

@@ -17,4 +17,5 @@ defmodule Suigin.Task do
     |> cast(params, [:name, :status, :category])
     |> validate_required([:name, :status, :category])
   end
+
 end

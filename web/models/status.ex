@@ -4,6 +4,8 @@ defmodule Suigin.Status do
   schema "status" do
     field :name, :string
 
+    belongs_to :tasks, Tasks, foreign_key: :task_id
+
     timestamps()
   end
 
