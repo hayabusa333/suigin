@@ -2,19 +2,25 @@
   <div class="col-lg-6">
     <h4>価値</h4>
     <ul>
-      <li>
-        test1
-      </li>
+      <%= for task <- @tasks do %>
+        <%= if task.category == 2 do %>
+        <li>
+          <%= task.name %>
+        </li>
+        <% end %>
+      <% end %>
     </ul>
   </div>
 
   <div class="col-lg-6">
     <h4>必須</h4>
     <ul>
-      <%= for required_task <- @required_tasks do %>
+      <%= for task <- @tasks do %>
+        <%= if task.category == 1 do %>
         <li>
-          <%= required_task.name %>
+          <%= task.name %>
         </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
@@ -22,16 +28,26 @@
   <div class="col-lg-6">
     <h4>錯覚</h4>
     <ul>
-      <li>
-      </li>
+      <%= for task <- @tasks do %>
+        <%= if task.category == 3 do %>
+        <li>
+          <%= task.name %>
+        </li>
+        <% end %>
+      <% end %>
     </ul>
   </div>
 
   <div class="col-lg-6">
     <h4>無駄</h4>
     <ul>
-      <li>
-      </li>
+      <%= for task <- @tasks do %>
+        <%= if task.category == 4 do %>
+        <li>
+          <%= task.name %>
+        </li>
+        <% end %>
+      <% end %>
     </ul>
   </div>
 </div>
