@@ -11,8 +11,11 @@
   <div class="col-lg-6">
     <h4>必須</h4>
     <ul>
-      <li>
-      </li>
+      <%= for required_task <- @required_tasks do %>
+        <li>
+          <%= required_task.name %>
+        </li>
+      <% end %>
     </ul>
   </div>
 
