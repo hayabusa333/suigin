@@ -40,8 +40,15 @@ defmodule Suigin.TaskController do
 
   def edit(conn, %{"id" => id}) do
     task = Repo.get!(Task, id)
+
+    category = Suigin.Category |> Repo.all()
+    category_list = Enum.reduce(category, [], fn(d, acc) -> acc ++ ["#{d.name}": d.id] end)
+
+    status = Suigin.Status |> Repo.all()
+    status_list = Enum.reduce(status, [], fn(d, acc) -> acc ++ ["#{d.name}": d.id] end)
+
     changeset = Task.changeset(task)
-    render(conn, "edit.html", task: task, changeset: changeset)
+    render(conn, "edit.html", task: task, category_list: category_list, status_list: status_list, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "task" => task_params}) do
