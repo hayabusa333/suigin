@@ -5,7 +5,7 @@
       <%= for task <- @tasks do %>
         <%= if task.category == 2 do %>
         <li>
-          <%= task.name %>
+          <%= link task.name, to: task_path(@conn, :show, task) %>
         </li>
         <% end %>
       <% end %>
@@ -18,7 +18,7 @@
       <%= for task <- @tasks do %>
         <%= if task.category == 1 do %>
         <li>
-          <%= task.name %>
+          <%= link task.name, to: task_path(@conn, :show, task) %>
         </li>
         <% end %>
       <% end %>
@@ -31,7 +31,7 @@
       <%= for task <- @tasks do %>
         <%= if task.category == 3 do %>
         <li>
-          <%= task.name %>
+          <%= link task.name, to: task_path(@conn, :show, task) %>
         </li>
         <% end %>
       <% end %>
@@ -44,7 +44,7 @@
       <%= for task <- @tasks do %>
         <%= if task.category == 4 do %>
         <li>
-          <%= task.name %>
+          <%= link task.name, to: task_path(@conn, :show, task) %>
         </li>
         <% end %>
       <% end %>
