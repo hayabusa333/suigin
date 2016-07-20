@@ -28,3 +28,4 @@
 </table>
 
 <%= link "New task", to: task_path(@conn, :new) %>
+<%= link "Index page", to: page_path(@conn, :index) %>
