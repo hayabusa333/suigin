@@ -3,6 +3,7 @@ defmodule Suigin.PageController do
 
   def index(conn, _params) do
     tasks = Suigin.Task |> Repo.all()
+    local_time = :calendar.local_time
     render conn, "index.html", tasks: tasks
   end
 end
